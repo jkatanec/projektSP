@@ -20,14 +20,14 @@ body {
     width: 75%;
     float: left;
     padding: 15px;
-    border: 1px solid red;
+    border: 1px solid darkblue;
 }
 .sign-up {
     width: 25%;
     text-align:right;
     float: right;
     padding: 30px;
-    border: 1px solid red;
+    border: 1px solid darkblue;
 }
 .nav {
     text-align:right;
@@ -37,7 +37,7 @@ body {
     width: 50%;
     float: left;
     padding: 30px;
-    border: 1px solid red;
+    border: 1px solid darkblue;
 }
 .calendar {
     background-color: white;
@@ -45,7 +45,7 @@ body {
     height:300px;
     float: left;
     padding: 15px;
-    border: 1px solid red;
+    border: 1px solid darkblue;
 }
 
 .dash {
