@@ -28,6 +28,18 @@ body {
     float: right;
     padding: 30px;
     border: 1px solid darkblue;
+    border-radius: 7px;
+    background-color:white;
+    line-height:1.8;
+}
+.signIn {
+    border-radius: 7px;
+    margin-top:5px;
+}
+.logo {
+    width:30px;
+    height:30px;
+    margin:5px;
 }
 .nav {
     text-align:right;
@@ -56,8 +68,9 @@ body {
     border: 5px solid darkblue;
     text-align:left;
     padding-left:initial;
+    overflow: hidden;
 }
-
+/*
 ul {
     list-style-type: none;
     margin: 0;
@@ -65,7 +78,7 @@ ul {
     overflow: hidden;
     background-color: lightblue;
     border: 5px solid darkblue;
-}
+}*/
 li {
     padding-bottom:10px;
     padding-left:20px;
