@@ -11,11 +11,14 @@ body {
 }
 .head {
     font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size:xx-large;
+    color:black;
     text-align:center;
-    position:center;
     text-decoration: none;
+    display: inline-block;
 }
 .header {
+    list-style-type: none;
     background-color: white;
     border: 3px solid black;
     padding: 15px;
@@ -56,6 +59,8 @@ body {
     height:30px;
     margin:5px;
     text-decoration: none;
+    display: inline-block;
+    position: relative;
 }
 .nav {
     text-align:right;
@@ -71,7 +76,7 @@ body {
 }
 .calendar {
     background-color: white;
-    width: 75%;
+    width: 80%;
     height:300px;
     float: left;
     padding: 15px;
@@ -79,32 +84,52 @@ body {
 }
 
 .dash {
-    width: 25%;
+    width: 20%;
     text-align:left;
     float: left;
-    padding: 30px;
-    border: 5px solid darkblue;
+    border: 5px solid #008CBA;
+    background-color:white;
+    color:black;
     text-align:left;
     padding-left:initial;
     overflow: hidden;
-}
-/*
-ul {
-    list-style-type: none;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: lightblue;
-    border: 5px solid darkblue;
-}*/
-li {
-    padding-bottom:10px;
-    padding-left:20px;
+    border-radius: 7px;
+    list-style-type: none;
+    height:auto
+}
+.dash li {
+    border: 2px solid #408476;
+    padding-top:0px;
+}
+.dash a {
+    color:black;
+    height:auto;
+}
+.show, .showb {
+    display: none; 
+}
+.hide:target + .show, .hideb:target + .showb {
+    display: block; 
+}
+.hide:target, .hideb:target {
+    display: none; 
+}
+.hide:target ~ .list, .hideb:target ~ .listb {
+    display:block; 
+}
+.list, .listb {
+    display:none; 
+    height:auto;
+    margin:0;
+    float: left;
+    width:100%;
+    text-decoration: none;
 }
 li a {
     display: block;
-    color: #000;
-    padding: 8px 16px;
+    color:white;
+    padding: 16px 16px;
     text-decoration: none;
 }
 .active {
@@ -113,26 +138,34 @@ li a {
 }
 
 .general {
-    float: left;
-    width:33.3333%;
-    border: 5px solid #408476;
+    margin: 0;
+    width:100%;
+    border: 2px solid #408476;
     text-align:center;
     padding-left:initial;
     border-radius: 7px;
     background-color:darkblue;
     color:white;
+    list-style-type: none;
+    overflow: hidden;
+}
+.general li {
+    float: left;
+    width:33.3333%;
+    border: 2px solid #408476;
 }
 
+/*
 .general a, .dropbtn {
     display: inline-block;
-    color: white;
+    
     text-align: center;
     padding: 15px 30px;
     text-decoration: none;
-    width:100%;
+    width:33.3333%;
     height:100%;
 }
-
+*/
 .general a:hover, .dropdown:hover .dropbtn, li a:hover {
     background-color: #408476;
     width: 100%;
@@ -168,4 +201,9 @@ li.dropdown {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+table {
+    width:80%;
+    background-color:white;
+    text-align:left;
 }
