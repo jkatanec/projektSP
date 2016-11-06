@@ -4,9 +4,9 @@
     <title>Registracija</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-
+    <script src="script.js"></script>
 </head>
-<body>
+<body onload="startTime()">
     <nav class="nav">
         <a href="home.html">Začetna stran</a>
         <a href="#">Koledar</a>
@@ -14,12 +14,18 @@
         <a href="#">O aplikaciji</a>
     </nav>
     <div class="header">
-        <a href="home.html">
-            <img src="Logo.png" width="70" height="70" />
-        </a>
-        <a href="home.html" class="head">Spletni koledar</a>
+        <div style="float:left">
+            <a href="home.html">
+                <img src="Logo.png" width="70" height="70" />
+            </a>
+        </div>
+        <div>
+            <a href="home.html" class="head">Spletni koledar</a>
+        </div>
+        <div style="float:right">
+            <a id="time"></a>
+        </div>
     </div>
-
 
 
     <ul class="dash" type="i">
@@ -29,22 +35,21 @@
 
         <li><a href="#">Dodaj nov koledar</a></li>
         <li>
-            <a href="#hide1" class="hide" id="hide1">Moji koledarji +</a>
-            <a href="#show1" class="show" id="show1">Moji koledarji -</a>
-            <ul class="list">
-                <li><a href="#">Rojstni dnevi</a></li>
-                <li><a href="#">Pomembni dogodki</a></li>
-                <li><a href="#">Urnik</a></li>
-            </ul>
+            <a onclick="accordian1()" href="#">Moji koledarji +</a>
+            <div id="acc1" class="accordion-content">
+                <a href="#">Rojstni dnevi</a>
+                <a href="#">Pomembni dogodki</a>
+                <a href="#">Urnik</a>
+            </div>
         </li><!---->
         <li>
-            <a href="#hideb1" class="hideb" id="hideb1">Skupni koledarji +</a>
-            <a href="#showb1" class="showb" id="showb1">Skupni koledarji -</a>
-            <ul class="listb">
-                <li><a href="#">Slovenski prazniki</a></li>
-            </ul>
+            <a onclick="accordian2()" href="#">Skupni koledarji +</a>
+            <div id="acc2" class="accordion-content">
+                <a href="#">Slovenski prazniki</a>
+            </div>
         </li>
-        <li><a href="#">Dogodki</a></li>
+        <li class="listb"><a href="#">Slovenski prazniki</a></li>
+        <li><a href="events.html">Dogodki</a></li>
         <li><a href="#">Nastavitve</a></li>
     </ul>
     <div class="display">

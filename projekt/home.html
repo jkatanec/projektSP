@@ -4,9 +4,9 @@
     <title>Spletni koledar</title>
 	<meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-
+    <script src="script.js"></script>
 </head>
-<body>
+<body onload="startTime()">
     <nav class="nav">
         <a href="home.html">Začetna stran</a>
         <a href="#">Koledar</a>
@@ -14,29 +14,29 @@
         <a href="#">O aplikaciji</a>
     </nav>
     <div class="header">
-        <a href="home.html">
-            <img src="Logo.png" width="70" height="70" />
-        </a>
-        <a href="home.html" class="head">Spletni koledar</a>
+        <div style="float:left">
+            <a href="home.html">
+                <img src="Logo.png" width="70" height="70" />
+            </a>
+        </div>
+        <div>
+            <a href="home.html" class="head">Spletni koledar</a>
+        </div>
+        <div style="float:right">
+            <a id="time"></a>
+        </div>
     </div>
+
     <ul class="general">
-        <li class="dropdown">
+        <li>
             <a href="#">Koledarji</a>
-            <div class="dropdown-content">
-                <a href="#">Slovenski prazniki</a>
-            </div>
         </li>
 
         <li>
             <a href="registration.html">Registracija</a>
         </li>
-        <li class="dropdown">
+        <li>
             <a href="#">O aplikaciji</a>
-            <div class="dropdown-content">
-                <a href="#">Lastnosti</a>
-                <a href="#">Razvoj aplikacije</a>
-                <a href="#">Kontakt</a>
-            </div>
         </li>
     </ul>
     <div class="description">
@@ -52,7 +52,7 @@
         <br />
         <a id="reg" href="registration.html">Nimaš profila? Registriraj se tukaj</a>
     </div>
-    
+
 
     <div align="center">
         <a href="https://www.facebook.com">
