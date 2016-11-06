@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Registracija</title>
+    <title>Koledarji</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="script.js"></script>
@@ -39,21 +39,37 @@
             <a href="#">O aplikaciji</a>
         </li>
     </ul>
+    <div class="description">
+        <h1>Javno dostopni koledarji:</h1>
+        <ul>
+            <li>
+                <a>Slovenski Prazniki</a>
+            </li>
+            <li>
+                <a>Setveni koledar</a>
+            </li>
 
-    <div class="registration">
-        <h1>Registracija</h1>
-        <a>Ime: </a><input id="username" type="text" /><br />
-        <a>Priimek: </a><input id="username" type="text" /><br />
-        <a>E-mail: </a><input id="username" type="text" /><br />
-        <a>Uporabniško ime: </a> <input id="username" type="text" /><br />
-        <a>Geslo: </a> <input id="password" type="password" /><br />
-        <a>Ponovno vpišite geslo:</a> <input id="password" type="password" /><br />
-        <input type="checkbox" /><a>Strinjam se s <b>pogoji uporabe</b></a><br />
-        <button id="signIn">Registriraj se</button><br />
+        </ul>
+        <p>Z <a href="registration.html">registracijo</a> dobite vpogled v vse koledarje ter opcijo kreiranja lastnih koledarjev!</p>
     </div>
-    <div class="registration">
-        <h2>Pogoji uporabe</h2>
-        <p>Vsi uporabniki vso objavljeno vsebino uporabljajo na lastno odgovornost.</p>
+    <div class="sign-up">
+        <a>Uporabniško ime:</a> <input id="username" type="text" /><br />
+        <a>Geslo:</a> <input id="password" type="password" /><br />
+        <form action="main-a.html">
+            <input class="signIn" type="submit" value="Prijavi se" />
+        </form>
+        <br />
+        <a id="reg" href="registration.html">Nimaš profila? Registriraj se tukaj</a>
+    </div>
+
+
+    <div align="center">
+        <a href="https://www.facebook.com">
+            <img src="facebook.png" class="logo" />
+        </a>
+        <a href="https://www.twitter.com">
+            <img src="Twitterbird.jpg" class="logo" />
+        </a>
     </div>
 </body>
 </html>

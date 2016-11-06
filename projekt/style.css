@@ -6,8 +6,9 @@
 body {
     background-color: lightblue;
     /*za fiksno poravnavo*/
-    position: absolute;
-    width:1380px;
+    position: center;
+   /* width:1380px;*/
+   min-width:530px;
 }
 .head {
     font-family:"Comic Sans MS", cursive, sans-serif;
@@ -39,14 +40,20 @@ body {
     width: 75%;
     float: left;
     padding: 15px;
+    padding-left: 30px;
     border: 1px solid darkblue;
+    border-radius: 7px;
+}
+.description a {
+    color:black!important;
+    width: 400px!important;
 }
 .sign-up {
     width: 25%;
     text-align:right;
     float: right;
     padding: 30px;
-    border: 1px solid darkblue;
+    border: 1px solid darkblue!important;
     border-radius: 7px;
     background-color:white;
     line-height:1.8;
@@ -79,6 +86,7 @@ body {
     width: 50%;
     float: left;
     padding: 30px;
+    padding-top: 0px;
     border: 1px solid darkblue;
     line-height:2.0;
     border-radius: 7px;
@@ -105,7 +113,8 @@ body {
     margin: 0;
     border-radius: 7px;
     list-style-type: none;
-    height:auto
+    height:auto;
+    display: block
 }
 .dash li {
     border: 2px solid #408476;
