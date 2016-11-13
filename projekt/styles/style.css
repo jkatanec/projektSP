@@ -9,6 +9,9 @@ body {
     position: center;
    /* width:1380px;*/
    min-width:530px;
+   max-width:1200px;
+   margin-left:auto;
+   margin-right:auto;
 }
 .head {
     font-family:"Comic Sans MS", cursive, sans-serif;
@@ -25,7 +28,7 @@ body {
     padding-right:0px;
     right:0px;
 }
-.header {
+header {
     list-style-type: none;
     background-color: white;
     border: 3px solid black;
@@ -37,7 +40,7 @@ body {
 }
 .description {
     background-color: white;
-    width: 75%;
+    width: 70%;
     float: left;
     padding: 15px;
     padding-left: 30px;
@@ -49,7 +52,7 @@ body {
     width: 400px!important;
 }
 .sign-up {
-    width: 25%;
+    width: 30%;
     text-align:right;
     float: right;
     padding: 30px;
@@ -69,6 +72,9 @@ body {
 .signIn:hover {
     background-color: #008CBA;
     color: white;
+}form label {
+    clear:both;
+    float:right;
 }
 .logo {
     width:30px;
@@ -90,6 +96,9 @@ body {
     border: 1px solid darkblue;
     line-height:2.0;
     border-radius: 7px;
+}
+.registration label {
+    float:left!important;
 }
 .calendar {
     background-color: white;
