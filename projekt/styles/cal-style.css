@@ -22,12 +22,6 @@ td {
   vertical-align: top;
 }
 
-.divcalendar {
-  background-color: white;
-    width: 80%;
-    height:300px;
-    float: left;
-}
 
 /* Wrapper div. That makes the inner div into an inline element that can be centered with text-align.*/
 .overall {
@@ -63,7 +57,7 @@ td {
   background-color: #E0E0E0;
 }
 
-#nextmonthdates {
+#nextmonthdates, #prevmonthdates {
   background-color: #E0E0E0;
 }
 

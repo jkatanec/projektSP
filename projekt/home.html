@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
     <script src="scripts/script.js"></script>
 </head>
-<body onload="startTime()">
+<body onload="startTime()" >
     <nav class="nav">
         <a href="home.html">Začetna stran</a>
         <a href="h-calendars.html">Koledar</a>
@@ -29,7 +29,7 @@
     <nav>
         <ul class="general">
             <li>
-                <a href="h-calendars.html">Koledarji</a>
+                <a href="#calendars">Koledarji</a>
             </li>
 
             <li>
@@ -52,8 +52,21 @@
         <p>Spletna aplikacija je primerna za vsakogar, ki želi imeti nadzor nad svojimi dogodki ter urejeno organiziranje svojega časa. Registracija in uporaba je povsem <b>brezplačna!</b></p>
         <!--<img src="koledar.jpg" />-->
     </div>
+    <div class="description" id="calendars">
+        <h1>Javno dostopni koledarji:</h1>
+        <ul>
+            <li>
+                <a>Slovenski Prazniki</a>
+            </li>
+            <li>
+                <a>Setveni koledar</a>
+            </li>
+
+        </ul>
+        <p>Z <a href="registration.html">registracijo</a> dobite vpogled v vse koledarje ter opcijo kreiranja lastnih koledarjev!</p>
+    </div>
     <div class="sign-up">
-        <form method="POST" action="main-a.html">
+        <form method="POST" action="main-a.html#public">
             <label>Uporabniško ime: <input name="username" type="text" placeholder="Vnesite upor. ime" required /></label>
             <label>Geslo: <input name="password" type="password" placeholder="Vnesite geslo" required /></label>
             <label><input type="checkbox" id="remember">Zapomni si me</label> 

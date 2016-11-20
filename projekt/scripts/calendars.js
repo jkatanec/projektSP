@@ -69,7 +69,7 @@ Calendar.prototype.Calendar = function (y, m) {
 
     var monthandyearhtml =  this.Months[m] + ' - ' + y;
 
-    var html = '<table>';
+    var html = '<table><thead>';
 
     // Write the header of the days of the week
     html += '<tr>';
@@ -78,13 +78,13 @@ Calendar.prototype.Calendar = function (y, m) {
         html += '<th class="daysheader">' + this.DaysOfWeek[i] + '</th>';
     }
 
-    html += '</tr>';
+    html += '</tr><thead>';
     var p = dm = this.f == 'M' ? 1 : firstDayOfCurrentMonth == 0 ? -5 : 2;
 
     var cellvalue;
 
     for (var d, i = 0, z0 = 0; z0 < 6; z0++) {
-        html += '<tr>';
+        html += '<tbody><tr>';
 
         for (var z0a = 0; z0a < 7; z0a++) {
             
@@ -117,7 +117,7 @@ Calendar.prototype.Calendar = function (y, m) {
             i++;
         }
 
-        html += '</tr>';
+        html += '</tr><tbody>';
     }
 
     // Closes table
