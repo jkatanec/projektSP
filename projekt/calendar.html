@@ -1,10 +1,12 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Koledarji</title>
+    <title>Dostopni koledar</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="styles/cal-style.css" />
     <script src="scripts/script.js"></script>
+    <script src="scripts/calendars.js" defer></script>
 </head>
 <body onload="startTime()">
     <nav class="nav">
@@ -29,7 +31,7 @@
             <li>
                 <a href="calendars.html">Koledarji</a>
             </li>
-            
+
             <li>
                 <a href="registration.html">Registracija</a>
             </li>
@@ -39,17 +41,65 @@
         </ul>
     </nav>
     <div class="description" id="show">
-        <h1>Javno dostopni koledarji:</h1>
-        <ul>
-            <li>
-                <a href="calendar.html">Slovenski Prazniki</a>
-            </li>
-            <li>
-                <a href="calendar.html">Setveni koledar</a>
-            </li>
+        <div class="overall">
+            <div class="month-control">
+                <a id="btnPrevYr" href="#public" title="Prejšnje leto"><span>&lt;&lt;</span></a>
 
-        </ul>
-        <p>Z <a href="registration.html">registracijo</a> dobite vpogled v vse koledarje ter opcijo kreiranja lastnih koledarjev!</p>
+                <a id="btnPrev" href="#public" title="Prejšnji mesec"><span>&lt;</span></a>
+
+                <div id="month-year"></div>
+
+                <a id="btnNext" href="#public" title="Naslednji mesec"><span>&gt;</span></a>
+
+                <a id="btnNextYr" href="#public" title="Naslednje leto"><span>&gt;&gt;</span></a>
+            </div>
+        </div>
+
+        <div id="cal-table">
+            <table>
+                <thead>
+                    <tr class="days-header">
+                        <th>
+                            PON
+                        </th>
+                        <th>
+                            TOR
+                        </th>
+                        <th>
+                            SRE
+                        </th>
+                        <th>
+                            ČET
+                        </th>
+                        <th>
+                            PET
+                        </th>
+                        <th>
+                            SOB
+                        </th>
+                        <th>
+                            NED
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="body">
+                    <tr id="test">
+                        <td id="day-cal">
+                            <form action="#eve" method="get">
+                                <button id="add" title="Dodaj dogodek">+</button>
+                            </form>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="week-cal"><td></td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <div class="sign-up">
         <form method="POST" action="main.html#public">
