@@ -13,3 +13,5 @@ Aplikacija je delujoča na različnih napravah - računalniku, tablici, mobitelu
 Pri izdelavi aplikacije je bila najbolj zamudna stvar implementacija samega koledarja, predvsem logika premikanja po mesecih in letih. Precej dela je bilo vloženega tudi v igro, ki smo jo kot projekt s koledoma Janom Geršakom in Martinom Turkom izdelali pri predmetu Računalniška grafika in tehnologija iger.
 
 V prihodnje želim (poleg implementacije dodajanja dogodkov na koledar, dodajanja uporabnikov ipd.) dodati še nekaj več opcij predlogov preživljanja prostega časa, morda dodati tudi kakšno novo igro. 
+
+Stran je zgrajena hierarhično, kar omogoča smiselen pregled in enostavno sprehajanje po strani. Začetna stran je home.html.
