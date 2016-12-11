@@ -1,0 +1,120 @@
+﻿table {
+  border-collapse: collapse;
+  font-family: Georgia, Times, serif;
+  width:100%;
+  border: 1px solid darkblue;
+}
+
+th {
+  border: 1px solid #A8A8A8;
+  vertical-align: top;
+  width:14.2857%;
+  background: #C0C0C0;
+  height: auto;
+  text-align: center;
+}
+
+td {
+  height: 150px;
+  width: 150px;
+  padding: 10px;
+  border: 1px solid #A8A8A8;
+  vertical-align: top;
+}
+
+
+/* Wrapper div. That makes the inner div into an inline element that can be centered with text-align.*/
+.overall {
+  text-align: center;
+}
+
+
+.month-control div {
+    display: inline-block;
+}    
+
+#btnPrevYr, #btnPrev, #btnNext, #btnNextYr {
+  text-decoration: none;
+  font-size: 35px;
+  margin:5px;
+  vertical-align: middle;
+  /*background: #00FFCC;*/      
+}
+ 
+#month-year {
+  font-size: 25px;
+  font-weight: bold;
+  padding:30px;
+  vertical-align: middle;
+  width:300px!important;
+  /*background: #00FFCC;*/
+}    
+#cal-table {
+  clear: both;
+  margin-bottom:20px;
+}
+
+#next-month, #prev-month {
+  background-color: #E0E0E0;
+}
+
+#this-month {
+  background-color: #FFFFFF;
+}
+
+#today {
+    background-color:#FFFFFF;
+    border:3px solid darkblue
+}
+
+#cellvaluespan {
+  background: #FF0000;
+}
+
+#cellvaluelist {
+  background: #FFCC00;
+}        
+#add {
+    float:right!important;
+}
+#test, #week-cal, #day0, #day1, #day2, #day3, #day4, #day5, #day6 {
+    display:none;
+}
+.disp {
+    display:inline;
+    width:20px!important;
+    padding-top:2px;
+}
+.disp label {
+    text-align: right;
+    clear: both;
+    float:left;
+    margin-right:15px;
+}
+.disp input {
+    margin-top:3px;
+}
+@media screen  
+  and (max-height: 800px) and (max-width: 1200px) {
+    td {
+        height:80px;
+        padding:3px;
+    }
+    
+    #month-year {
+        font-size:20px;
+        padding:8px;
+        width:200px!important;
+    }
+}
+@media screen and (max-height: 640px) and (max-width: 560px) {
+    td {
+        height:50px;
+        padding:2px;
+    }
+    #month-year {
+        font-size:15px;
+        padding:5px;
+        width:150px!important;
+    }
+}

@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <title>Koledar</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="styles/cal-style.css" />
+    <script src="scripts/script.js"></script>
+    <script src="scripts/calendars.js" defer></script>
+</head>
+<body onload="startTime()">
+    <nav class="nav">
+        <a href="home.html"  onclick="return confirm('Ste prepričani, da se želite odjaviti?')">Odjava</a>
+        <a href="#public">Javni koledar</a>
+        <a href="#help">Uporabniška pomoč</a>
+    </nav>
+    <header>
+        <div style="float:left">
+            <a href="home.html">
+                <img src="assets/Logo.png" width="70" height="70" alt="logo" />
+            </a>
+        </div>
+        <div>
+            <a href="main.html#public" class="head">Spletni koledar</a>
+        </div>
+        <div id="time"></div>
+    </header>
+    
+    
+    <nav>
+        <ul class="dash" id="expand"><li><a href="#hide">Spletni koledar</a></li></ul>
+        <ul class="dash" id="hide">
+            <li class="back" onclick="goBack()"><a>&lt;&lt; Nazaj</a></li>
+
+            <li>
+                <input type="text" name="search" placeholder="Išči po koledarjih"><input id="searchCal" type="submit" value="Išči" />
+            </li>
+
+            <li><a href="#public">Moj javni koledar</a></li>
+
+            <li>
+                <a onclick="accordian1()" >Moji koledarji +</a>
+                <div id="acc1" class="accordion-content">
+                    <a href="#public">Rojstni dnevi</a>
+                    <a href="#public">Pomembni dogodki</a>
+                    <a href="#public">Urnik</a>
+                    <a href="#create">+ Dodaj nov koledar</a>
+                </div>
+            </li><!---->
+            <li>
+                <a onclick="accordian2()">Skupni koledarji +</a>
+                <div id="acc2" class="accordion-content">
+                    <a href="#public">Slovenski prazniki</a>
+                    <a href="#public">Setveni koledar</a>
+                </div>
+            </li>
+            <li><a href="#events">Dogodki</a></li>
+            <li><a href="#searchUsers">Išči uporabnike</a></li>
+            <li><a href="#help">Pomoč</a></li>
+            <li><a href="#freeTime">Prosti čas</a></li>
+            <li><a href="home.html" onclick="return confirm('Ste prepričani, da se želite odjaviti?')">Odjava</a></li>
+
+        </ul>
+    </nav>
+    <section>
+        <div class="divcalendar" id="public">
+            <!--
+            <div class="disp">
+                <label><input class="rad" type="radio" name="disp" value="Dan" id="day" /> Dan</label>
+                <label><input class="rad" type="radio" name="disp" value="Teden" id="week" /> Teden</label>
+                <label><input class="rad" type="radio" name="disp" value="Mesec" id="month" checked /> Mesec</label>
+                <label><input type="button" value="Prikaži" onClick="window.location.reload()" /></label>
+            </div>-->
+            <div class="overall">
+                <div class="month-control">
+                    <a id="btnPrevYr" href="#public" title="Prejšnje leto"><span>&lt;&lt;</span></a>
+
+                    <a id="btnPrev" href="#public" title="Prejšnji mesec"><span>&lt;</span></a>
+
+                    <div id="month-year"></div>
+
+                    <a id="btnNext" href="#public" title="Naslednji mesec"><span>&gt;</span></a>
+
+                    <a id="btnNextYr" href="#public" title="Naslednje leto"><span>&gt;&gt;</span></a>
+                </div>
+            </div>
+
+            <div id="cal-table">
+                <table>
+                    <thead>
+                        <tr class="days-header">
+                            <th>
+                                PON
+                            </th>
+                            <th>
+                                TOR
+                            </th>
+                            <th>
+                                SRE
+                            </th>
+                            <th>
+                                ČET
+                            </th>
+                            <th>
+                                PET
+                            </th>
+                            <th>
+                                SOB
+                            </th>
+                            <th>
+                                NED
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="body">
+                        <tr id="test">
+                            <td id="day-cal">
+                                <form action="#eve" method="get">
+                                    <button id="add" title="Dodaj dogodek">+</button>
+                                </form>
+                            </td>
+                            <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+                        </tr>
+                        <tr id="week-cal"><td></td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="create" id="eve">
+            <h1>Dodaj nov dogodek</h1>
+            <form method="POST" action="#public">
+                <label>Ime dogodka: <input name="eventname" type="text" placeholder="Ime" required /></label>
+                <label>Opis dogodka: <textarea name="eventdesc" placeholder="Opis"></textarea></label>
+                <label>Lokacija dogodka: <input name="eventlocation" type="text" placeholder="Lokacija" /></label>
+                <label>Začetek: <input name="eventstart" type="datetime" /></label>
+                <label>Konec: <input name="eventover" type="datetime" /></label>
+                <label>Periodično ponavljanje dogodka:</label>
+                <label><input class="rad" type="radio" name="eperiod" value="nikoli" checked>Nikoli </label>
+                <label><input class="rad" type="radio" name="eperiod" value="tedensko">Tedensko</label>
+                <label><input class="rad" type="radio" name="eperiod" value="mesečno">Mesčno</label>
+                <label><input class="signIn" type="submit" value="Dodaj nov dogodek!" /></label>
+            </form>
+        </div>
+        <div class="create" id="events">
+            <h1>Dogodki iz vaših koledarjev</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Dogodek</th>
+                        <th>Trajanje</th>
+                        <th>Lokacija</th>
+                        <th>Koledar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>13.12.2016</td>
+                        <td>Zobozdravnik</td>
+                        <td>13.10-13.30</td>
+                        <td>Zdravstveni dom</td>
+                        <td>Pomembni dogodki</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="create" id="create">
+            <h1>Ustvari nov koledar!</h1>
+            <p>Ta opcija ti omogoča, da ohranjaš dober pregled nad vsemi dogodki.</p>
+            <form method="POST" action="*">
+                <label>Ime koledarja: <input name="calendarname" type="text" placeholder="Ime" required /></label>
+                <label>Opis koledarja: <textarea name="calendardesc" placeholder="Opis"></textarea></label>
+                <label>Periodično ponavljanje koledarja:</label>
+                <label><input class="rad" type="radio" name="period" value="nikoli" checked>Nikoli </label>
+                <label><input class="rad" type="radio" name="period" value="tedensko">Tedensko</label>
+                <label><input class="rad" type="radio" name="period" value="mesečno">Mesčno</label>
+                <label><input class="signIn" type="submit" value="Ustvari nov koledar!" /></label>
+            </form>
+        </div>
+        <div class="create" id="searchUsers">
+            <h1>Iskanje uporabnikov</h1>
+            <form method="GET">
+                <label>Ime: <input type="search" name="name" /></label>
+                <label>Priimek: <input type="search" name="surname" /></label>
+                <label>Kraj: <input type="search" name="lacation" /></label>
+                <label><input class="signIn" type="submit" value="Išči" /></label>
+            </form>
+        </div>
+        <div class="create" id="help">
+            <h1>Pomoč</h1>
+            <h2>1. Prikaz koledarjev</h2>
+            <p>Prikaz koledarja je enostaven, prikaže vam vse dneve meseca.</p>
+            <h2>2. Javni koledar</h2>
+            <p>
+                To je koledar, ki je viden vsem uporabnikom spletne aplikacije. Iz zasebnih koledarjev (Moji koledarji) lahko sem uvozite dogodke, za katere menite, da jih lahko vidijo
+                vsi ljudje. <b>Pozor!</b> Pazite, saj lahko te dogodke vidijo prav vsi uporabniki aplikacije!
+            </p>
+            <h2>3. Moji koledarji</h2>
+            <p>
+                Tukaj upravljate s koledarji, ki so vidni samo vam. S pritiskom na gumb <button>+</button> pri posameznem dnevu v mesecu lahko dodate nov dogodek. Nekaj osebnih koledarjev
+                je dodano že na začetku: <b>Rojstni dnevi, Pomembni dogodki</b> in <b>Urnik</b>.
+            </p>
+            <h2>4. Skupni koledar</h2>
+            <p>V tem sklopu lahko spremljate koledarji, ki so skupni vsem. Tukaj dogodkov ne morete dodajati.</p>
+            <h2>5. Dogodki</h2>
+            <p>S klikom na polje Dogodki dobite prikaz dogodkov iz svojih koledarjev. Razvrščeni so po datumu.</p>
+            <h2>6. Išči uporabnike</h2>
+            <p>Iščete lahko vse uporabnike v spletni aplikaciji. S klikom na njihov profil dobite vpogled v njihov javni koledar.</p>
+            <h2>7. Prosti čas</h2>
+            <p>Spletna stran vam tudi predlaga, kaj lahko počnete, če imate preveč prostega časa. Ponuja zanimive igre, seznam dobrih filmov, ki se vrtijo na TV...</p>
+        </div>
+        <div class="create" id="freeTime">
+            <h1>Predlogi za preživljanje prostega časa</h1>
+            <h2>Igraj igro Over My Dead Body</h2>
+            <p>Novega predsednika ZDA, Donalda Trumpa, so zajeli mehiški teroristi. Ameriške specialne enote so za njegovo reševanje najele prav tebe! Srečno!</p>
+            <a href="game/index.html">ZA IGRO KLIKNI TUKAJ</a>
+            <h2>Predlagani filmi</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Film</th>
+                        <th>Žanr</th>
+                        <th>Trajanje</th>
+                        <th>Kanal</th>
+                        <th>Na sporedu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Goodfellas (<i>Dobri fantje</i>)</td>
+                        <td>kriminalka, drama</td>
+                        <td>2h30min</td>
+                        <td>Kanal A</td>
+                        <td>10.12.2016, 20.00</td>
+                    </tr>
+                    <tr>
+                        <td>Pulp Fiction (<i>Šund</i>)</td>
+                        <td>kriminalka, drama</td>
+                        <td>2h40min</td>
+                        <td>POP TV</td>
+                        <td>11.12.2016, 23.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+</html>
