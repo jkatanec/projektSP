@@ -1,0 +1,13 @@
+{% extends 'koledarji/base.html' %}
+{% block title %}Registracija{% endblock %}
+{% block body %}
+<div class="description">
+    <h1>Registriraj se!</h1>
+
+    <form method="POST" action="" enctype="multipart/form-data">
+         {% csrf_token %}
+        {% include 'koledarji/form-template.html' %}
+        <label><input class="signIn" type="submit" value="Ustvari nov koledar!" /></label>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'koledarji/base.html' %}
+{% block title %}{{ calendar.name }}{% endblock %}
+{% block body %}
+{{ calendar.name }}
+<span>-</span>
+{{ calendar.description }}
+{% if error_message %}
+    <p>{{ error_message }}</p>
+{% endif %}
+<ul>
+    {% for event in calendar.event_set.all %}
+    <li>{{ event.name }} - {{ event.date }}.</li>
+    {% endfor %}
+</ul>
+<div>
+    <form action="{% url 'koledarji:calendar_delete' calendar.id %}" method="post">
+        {% csrf_token %}
+        <label><input class="signIn" type="submit" value="Izbriši koledar!" /></label>
+    </form>
+</div>
+{% endblock %}

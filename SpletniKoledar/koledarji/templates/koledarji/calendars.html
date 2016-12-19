@@ -1,0 +1,20 @@
+﻿{% extends 'koledarji/base.html' %}
+
+{% block title %}Koledarji{% endblock %}
+{% block body %}
+    <div class="description" id="show">
+        <h1>Javno dostopni koledarji:</h1>
+        <ul>
+            {% for calendar in calendars_list %}
+            <li>
+                <a href="{% url 'koledarji:detail' calendar.id %}">{{ calendar.name }}</a>
+            </li>
+            {% endfor %}
+            <li>
+                <a href="{% url 'koledarji:calendar_add' %}">Dodaj koledar</a>
+            </li>
+        </ul>
+        <p>Z <a href="registration.html">registracijo</a> dobite vpogled v vse koledarje ter opcijo kreiranja lastnih koledarjev!</p>
+    </div>
+{% endblock %}
+
