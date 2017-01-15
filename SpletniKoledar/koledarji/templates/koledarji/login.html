@@ -1,0 +1,17 @@
+{% extends 'koledarji/base.html' %}
+{% block title %}Prijava{% endblock %}
+{% block body %}
+    {% block login %}
+    {% endblock %}
+    {% if form.errors %}
+        <p>Napačno uporabniško ime ali geslo</p>
+    {% endif %}
+<div class="sign-up">
+    <form method="POST" action="/koledarji/auth/"> {% csrf_token %}
+        <label>Uporabniško ime: <input name="username" type="text" placeholder="Vnesite upor. ime" required /></label>
+        <label>Geslo: <input name="password" type="password" placeholder="Vnesite geslo" required /></label>
+        <label><input class="signIn" type="submit" value="Prijavi se" /></label>
+        <label><a id="reg" href="/koledarji/registracija/">Nimaš profila? Registriraj se tukaj</a></label>
+    </form>
+</div>
+{% endblock %}

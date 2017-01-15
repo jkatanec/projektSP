@@ -14,15 +14,12 @@ urlpatterns = [
     url(r'^about/$', views.AboutView.as_view(), name='about'),
 
     #/koledarji/{id}/         POPRAVI
-    url(r'^(?P<pk>[0-9]+)$', views.DetailView.as_view(), name='detail'),
-
-    #koledarji/koledar/dodaj/
-    url(r'^koledar/dodaj/$', views.CalendarCreate.as_view(),name='calendar_add'),
-
-#koledarji/koledar/{id}/
-    url(r'^koledar/(?P<pk>[0-9]+)/$', views.CalendarUpdate.as_view(),name='calendar_update'),
+    url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
 
 
-#koledarji/koledar/{id}/
-    url(r'^koledar/(?P<pk>[0-9]+)/$', views.CalendarDelete.as_view(),name='calendar_delete')
+    #user auth urls
+    url(r'^auth/$', 'koledarji.views.auth_view'),
+    url(r'^logout/$', 'koledarji.views.logout'),
+    url(r'^loggedin/$', 'koledarji.views.loggedin'),
+    url(r'^invalid/$', 'koledarji.views.invalid_login'),
 ]

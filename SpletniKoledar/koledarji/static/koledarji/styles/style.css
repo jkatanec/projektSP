@@ -59,12 +59,6 @@ header {
     color:black!important;
     width: 400px!important;
 }
-#calendars {
-    display:none;
-}
-#calendars:target{
-    display:inline-block;
-}
 .sign-up {
     width: 30%;
     float: right;
@@ -196,24 +190,14 @@ li a {
     height:100%;
 }
 
-#events {
-    display:none;
-}
-#events:target {
-    display:inline-block;
-}
-
 .divcalendar {
-    display:none;
+    display:inline-block;
     background-color: white;
     height:300px;
     float: left;
 }
-.divcalendar:target {
-    display:inline-block;
-}
 .create {
-    display:none;
+    display:inline-block;
     background-color: white;
     float: left;
     margin-left:0px;
@@ -236,9 +220,6 @@ li a {
     width:320px;
 	display:flex;
 	flex-flow:column;
-}
-.create:target {
-    display:inline-block;
 }
 .noLine {
     display:block!important;

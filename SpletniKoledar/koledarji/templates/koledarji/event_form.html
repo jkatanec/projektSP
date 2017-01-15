@@ -1,0 +1,12 @@
+{% extends 'prijavljen/base.html' %}
+
+{% block body %}
+<div class="registration">
+    <h1>Dodaj nov dogodek na {{ calendar.name }}</h1>
+    <form method="POST" action="" enctype="multipart/form-data">
+         {% csrf_token %}
+        {% include 'koledarji/form-template.html' %}
+        <label><input class="signIn" type="submit" value="Dodaj nov dogodek!" /></label>
+    </form>
+</div>
+{% endblock %}

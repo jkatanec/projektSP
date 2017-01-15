@@ -1,13 +1,19 @@
 {% extends 'koledarji/base.html' %}
 {% block title %}Registracija{% endblock %}
 {% block body %}
-<div class="description">
-    <h1>Registriraj se!</h1>
+<div class="registration">
+    <h1>Registriracija</h1>
 
     <form method="POST" action="" enctype="multipart/form-data">
          {% csrf_token %}
         {% include 'koledarji/form-template.html' %}
-        <label><input class="signIn" type="submit" value="Ustvari nov koledar!" /></label>
+        <label class="noLine"><input type="checkbox" required/>Strinjam se s <b>pogoji uporabe</b></label>
+        <label><input class="signIn" type="submit" value="Registriraj se!" /></label>
     </form>
+</div>
+
+<div class="registration">
+    <h2>Pogoji uporabe</h2>
+    <p>Vsi uporabniki obavljajo vsebino na lastno odgovornost. Posamezni uporabnik dovoljuje, da lahko vsi ostali vidijo njegov javno dostopen koledar.</p>
 </div>
 {% endblock %}

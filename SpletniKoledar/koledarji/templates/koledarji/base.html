@@ -5,7 +5,8 @@
     <title>{% block title %}Koledarji{% endblock %}</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="{% static 'koledarji/styles/style.css' %}" />
-    <script src="scripts/script.js"></script>
+    <script src="{% static 'koledarji/scripts/script.js' %}"></script>
+    <script src="{% static 'koledarji/scripts/calendars.js' %}" defer></script>
 </head>
 <body onload="startTime()">
     <nav class="nav">
@@ -41,17 +42,6 @@
     </nav>
     {% block body %}
     {% endblock %}
-    <div class="sign-up">
-        <form method="POST" action="main.html#public">
-            <label>Uporabniško ime: <input name="username" type="text" placeholder="Vnesite upor. ime" required /></label>
-            <label>Geslo: <input name="password" type="password" placeholder="Vnesite geslo" required /></label>
-            <label class="noLine"><input type="checkbox" id="remember">Zapomni si me</label>
-            <label><input class="signIn" type="submit" value="Prijavi se" /></label>
-            <label><a href="#">Pozabil sem geslo</a></label>
-            <label><a id="reg" href="registration.html">Nimaš profila? Registriraj se tukaj</a></label>
-        </form>
-    </div>
-
     <footer>
         <p>Jernej Katanec, FRI UL, 2016/2017 ©</p>
     </footer>

@@ -1,20 +1,18 @@
-﻿{% extends 'koledarji/base.html' %}
-
+﻿{% extends 'koledarji/login.html' %}
 {% block title %}Koledarji{% endblock %}
-{% block body %}
+{% block login %}
     <div class="description" id="show">
         <h1>Javno dostopni koledarji:</h1>
         <ul>
             {% for calendar in calendars_list %}
-            <li>
-                <a href="{% url 'koledarji:detail' calendar.id %}">{{ calendar.name }}</a>
-            </li>
+                {% if calendar.user.username == 'admin' %}
+                <li>
+                    <a href="{% url 'koledarji:detail' calendar.id %}">{{ calendar.name }}</a>
+                </li>
+                {% endif %}
             {% endfor %}
-            <li>
-                <a href="{% url 'koledarji:calendar_add' %}">Dodaj koledar</a>
-            </li>
         </ul>
-        <p>Z <a href="registration.html">registracijo</a> dobite vpogled v vse koledarje ter opcijo kreiranja lastnih koledarjev!</p>
+        <p>Z <a href="/koledarji/registracija/">registracijo</a> dobite vpogled v vse koledarje ter opcijo kreiranja lastnih koledarjev!</p>
     </div>
 {% endblock %}
 

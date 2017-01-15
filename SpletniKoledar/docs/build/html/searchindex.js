@@ -1,0 +1,1 @@
+Search.setIndex({docnames:["index"],envversion:51,filenames:["index.rst"],objects:{},objnames:{},objtypes:{},terms:{abecedni:0,iskalnik:0,modulov:0,seznam:0},titles:["Welcome to SpletniKoledar&#8217;s documentation!"],titleterms:{document:0,indic:0,spletnikoledar:0,tabl:0,welcom:0}})

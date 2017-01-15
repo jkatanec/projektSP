@@ -1,0 +1,22 @@
+{% extends 'koledarji/base.html' %}
+
+{% block body %}
+<div class="create">
+    <h1>{% block cal_name %}Dogodki iz vaših koledarjev{% endblock %}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Datum</th>
+                <th>Dogodek</th>
+                <th>Začetek</th>
+                <th>Lokacija</th>
+                <th>Trajanje</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% block cal %}
+            {% endblock %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

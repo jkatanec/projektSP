@@ -1,21 +1,16 @@
-{% extends 'koledarji/base.html' %}
-{% block title %}{{ calendar.name }}{% endblock %}
-{% block body %}
-{{ calendar.name }}
-<span>-</span>
-{{ calendar.description }}
-{% if error_message %}
-    <p>{{ error_message }}</p>
-{% endif %}
-<ul>
-    {% for event in calendar.event_set.all %}
-    <li>{{ event.name }} - {{ event.date }}.</li>
-    {% endfor %}
-</ul>
-<div>
-    <form action="{% url 'koledarji:calendar_delete' calendar.id %}" method="post">
-        {% csrf_token %}
-        <label><input class="signIn" type="submit" value="Izbriši koledar!" /></label>
-    </form>
-</div>
+{% extends 'koledarji/calendar.html' %}
+
+{% block cal_name %}
+    Koledar: {{ calendar.name }}
+{% endblock %}
+{% block cal %}
+        {% for event in calendar.event_set.all %}
+            <tr>
+                <td>{{ event.day }}. {{ event.month }}. {{ event.year }}</td>
+                <td>{{ event.name }}</td>
+                <td>{{ event.start }}</td>
+                <td>{{ event.location }}</td>
+                <td>{{ event.duration }}</td>
+            </tr>
+        {% endfor %}
 {% endblock %}
